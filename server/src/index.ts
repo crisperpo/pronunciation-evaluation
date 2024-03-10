@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+
 const cors = require('cors');
 
 const PORT = 3000;
@@ -39,12 +40,12 @@ app.use(cors({
   methods:['GET']
 }));
 
-app.get('/get-audio-transcription', (_req, res) => {
+app.get('/get-audio-transcription', (_, res) => {
   console.log('Getting audio transcription');
   res.send(MOCK_TRANSCRIPTION_RESPONSE);
 });
 
-app.get('/get-audio-evaluation', (_req, res) => {
+app.get('/get-audio-evaluation', (_, res) => {
   console.log('Getting audio evaluation');
   res.send({
     score: 90,
