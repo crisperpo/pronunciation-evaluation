@@ -1,4 +1,5 @@
-import express from 'express';
+const express = require('express');
+const cors = require('cors');
 
 const PORT = 3000;
 const MOCK_TRANSCRIPTION_RESPONSE = [
@@ -32,6 +33,11 @@ const MOCK_TRANSCRIPTION_RESPONSE = [
 const app = express();
 
 app.use(express.json());
+
+app.use(cors({
+  origin:"*",
+  methods:['GET']
+}));
 
 app.get('/get-audio-transcription', (_req, res) => {
   console.log('Getting audio transcription');
