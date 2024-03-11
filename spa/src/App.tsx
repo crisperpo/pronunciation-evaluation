@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
+import getAudioTranscript from './services/getAudioTranscript'
 import './App.css';
 
 function App() {
   useEffect(() => {
-    axios.get("http://localhost:3000/get-audio-transcription").then((data) => {
-      console.log(data);
-    });
+    getAudioTranscript();
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-      
+
       </header>
     </div>
   );
