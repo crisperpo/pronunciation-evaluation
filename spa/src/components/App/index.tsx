@@ -26,7 +26,7 @@ const App = (): JSX.Element => {
           </div>
           <div id="feedback-container">"Well done"</div>
         </div>
-        <RecordingButton />
+        <RecordingButton phraseToRecord={RECORDING_TRAINER_DATA.phrase} />
       </div>
     </main>
   );
