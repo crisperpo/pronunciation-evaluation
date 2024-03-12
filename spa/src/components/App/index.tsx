@@ -21,10 +21,8 @@ const App = (): JSX.Element => {
       <div id="recording-container">
         <div>
           <div id="phrase-container" >
-            <div className="icon-audio">
-              <SpeakerHigh weight="bold" />
-            </div>
-            <span>{RECORDING_TRAINER_DATA.phrase}</span>
+            <div className="phrase-icon"><SpeakerHigh weight="bold" /></div>
+            <div className="phrase-text">{RECORDING_TRAINER_DATA.phrase}</div>
           </div>
           <div id="feedback-container">"Well done"</div>
         </div>
