@@ -4,6 +4,7 @@ import getAudioTranscription from '../../services/getAudioTranscript';
 import getAudioEvaluation from '../../services/getAudioEvaluation';
 
 import './index.scss';
+import { TranscriptionPiece } from '../../services/types';
 
 type ButtonRecordingProps = {
   phraseToRecord: string;
@@ -11,13 +12,14 @@ type ButtonRecordingProps = {
 
 const ButtonRecording = ({ phraseToRecord }: ButtonRecordingProps): JSX.Element => {
   const [status, setStatus]= useState('default');
-  const handleClick = () => {
+  const handleClick = async () => {
     if(status === 'default'){
       setStatus('listening');
-      const audioTranscription = getAudioTranscription({
+      const audioTranscription = await getAudioTranscription({
         text_to_record: phraseToRecord, learner_recording: 'mockRecording.mp3'
       });
-      const audioEvaluation = getAudioEvaluation(audioTranscription);
+      const audioEvaluation = await getAudioEvaluation(audioTranscription);
+      console.log('audioEvaluation=', audioEvaluation);
     }
   };
 
