@@ -11,7 +11,7 @@ function App() {
   return (
     <main id="main-content-container">
       <h1>Listen, then say it out loud</h1>
-      <div className='image-container'>
+      <div id='image-container'>
         <img src={RECORDING_TRAINER_DATA.image} />
       </div>
       <div id="recording-container">
