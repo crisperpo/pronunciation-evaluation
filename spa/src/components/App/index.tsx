@@ -1,6 +1,7 @@
 import React from 'react';
+import { SpeakerHigh } from '@phosphor-icons/react';
 
-import './index.css';
+import './index.scss';
 
 const RECORDING_TRAINER_DATA = {
   phrase: 'Woher kommst du',
@@ -19,7 +20,10 @@ const App = (): JSX.Element => {
       <div id="recording-container">
         <div>
           <div id="phrase-container" >
-            {RECORDING_TRAINER_DATA.phrase}
+            <div className="icon-audio">
+              <SpeakerHigh weight="bold" />
+            </div>
+            <span>{RECORDING_TRAINER_DATA.phrase}</span>
           </div>
           <div id="feedback-container">"Well done"</div>
         </div>
