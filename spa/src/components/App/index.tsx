@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RecordingButton from '../ButtonRecording';
 import { SpeakerHigh } from '@phosphor-icons/react';
 
@@ -10,6 +10,8 @@ const RECORDING_TRAINER_DATA = {
 };
 
 const App = (): JSX.Element => {
+  const [feedback, setFeedback] = useState('');
+
   return (
     <main id="main-content-container">
       <div>
@@ -24,9 +26,12 @@ const App = (): JSX.Element => {
             <div className="phrase-icon"><SpeakerHigh weight="bold" /></div>
             <div className="phrase-text">{RECORDING_TRAINER_DATA.phrase}</div>
           </div>
-          <div id="feedback-container">"Well done"</div>
+          <div id="feedback-container">{ feedback }</div>
         </div>
-        <RecordingButton phraseToRecord={RECORDING_TRAINER_DATA.phrase} />
+        <RecordingButton
+          phraseToRecord={RECORDING_TRAINER_DATA.phrase}
+          setFeedback={ setFeedback }
+        />
       </div>
     </main>
   );
