@@ -1,6 +1,6 @@
 import React from 'react';
-import { SpeakerHigh } from '@phosphor-icons/react';
 import RecordingButton from '../ButtonRecording';
+import { SpeakerHigh } from '@phosphor-icons/react';
 
 import './index.scss';
 
