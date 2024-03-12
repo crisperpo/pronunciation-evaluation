@@ -1,21 +1,28 @@
 import React from 'react';
 
-import './App.css';
+import './index.css';
 
 const RECORDING_TRAINER_DATA = {
   phrase: 'Woher kommst du',
   image: 'https://picsum.photos/200'
 };
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <main id="main-content-container">
-      <h1>Listen, then say it out loud</h1>
-      <div id='image-container'>
-        <img src={RECORDING_TRAINER_DATA.image} />
+      <div>
+        <h2>Listen, then say it out loud</h2>
+        <div id="image-container">
+          <img src={RECORDING_TRAINER_DATA.image} />
+        </div>
       </div>
       <div id="recording-container">
-        <div>{RECORDING_TRAINER_DATA.phrase}</div>
+        <div>
+          <div id="phrase-container" >
+            {RECORDING_TRAINER_DATA.phrase}
+          </div>
+          <div id="feedback-container">"Well done"</div>
+        </div>
         <button>Mic</button>
       </div>
     </main>
