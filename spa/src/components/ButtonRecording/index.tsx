@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import { ArrowClockwise, Check, Microphone, Waveform } from '@phosphor-icons/react';
+import getAudioTranscription from '../../services/getAudioTranscript';
+import getAudioEvaluation from '../../services/getAudioEvaluation';
 
 import './index.scss';
 
-const ButtonRecording = (): JSX.Element => {
+type ButtonRecordingProps = {
+  phraseToRecord: string;
+};
+
+const ButtonRecording = ({ phraseToRecord }: ButtonRecordingProps): JSX.Element => {
   const [status, setStatus]= useState('default');
   const handleClick = () => {
-    if(status === 'default') setStatus('listening');
+    if(status === 'default'){
+      setStatus('listening');
+      const audioTranscription = getAudioTranscription({
+        text_to_record: phraseToRecord, learner_recording: 'mockRecording.mp3'
+      });
+      const audioEvaluation = getAudioEvaluation(audioTranscription);
+    }
   };
 
   return (
