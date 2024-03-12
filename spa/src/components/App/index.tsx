@@ -1,5 +1,6 @@
 import React from 'react';
 import { SpeakerHigh } from '@phosphor-icons/react';
+import RecordingButton from '../ButtonRecording';
 
 import './index.scss';
 
@@ -27,7 +28,7 @@ const App = (): JSX.Element => {
           </div>
           <div id="feedback-container">"Well done"</div>
         </div>
-        <button>Mic</button>
+        <RecordingButton />
       </div>
     </main>
   );
